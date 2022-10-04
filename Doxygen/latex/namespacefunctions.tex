@@ -1,0 +1,435 @@
+\hypertarget{namespacefunctions}{}\doxysection{functions Namespace Reference}
+\label{namespacefunctions}\index{functions@{functions}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefunctions_ae6a322a9a46a188d3b8a216e07d6eb84}{derivative}} (t, x)
+\begin{DoxyCompactList}\small\item\em Derivation of a signal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a84a36de26c106feac2e195a94119ccca}{integration}} (t, x)
+\begin{DoxyCompactList}\small\item\em Integration of a signal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_af72d9f915fa7042348a896f8b073336b}{myhighpass}} (t, u, tc)
+\begin{DoxyCompactList}\small\item\em First order high pass filter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_abd6d4e7692ea6198bbe15442cb086af9}{mylowpass}} (t, u, tc)
+\begin{DoxyCompactList}\small\item\em First order low pass filter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a3c2af030672bbdf0ea7c95d0e3e84995}{mw\+\_\+dft}} (data, t, omega)
+\begin{DoxyCompactList}\small\item\em Function required for calculating windowed phasor of a signal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a36d3531cead8d64150a156c73085d2ae}{window\+\_\+phasor\+\_\+mag}} (t, x, sr, cycles, dom\+\_\+freq=50)
+\begin{DoxyCompactList}\small\item\em Magnitude of moving discrete fourier transform. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a0c7835ccaa18139640679ccffbbf89b8}{window\+\_\+phasor\+\_\+angle}} (t, x, sr, cycles, dom\+\_\+freq=50)
+\begin{DoxyCompactList}\small\item\em Angle of moving discrete fourier transform. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a5d2290b3bfbd14e3cbfe8714994cb2ff}{trendfilter}} (t, x, lamda1)
+\begin{DoxyCompactList}\small\item\em Returns a smoothened version of the input signal, depending on parameter \textquotesingle{}lambda\textquotesingle{}, considered as a median filter, also known as \textquotesingle{}Hodrick Prescott\textquotesingle{} filter. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_ac3bd66a8335fb030fe08eb8e58a10f35}{avg\+Mov\+Win}} (t, v, t\+\_\+win)
+\begin{DoxyCompactList}\small\item\em Moving window average of the signal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a44e6c742613f3cff6f2f4777f2330093}{rms\+Mov\+Win}} (t, v, t\+\_\+win)
+\begin{DoxyCompactList}\small\item\em Moving window RMS of the signal. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_afd79838b9597931d2e90555a4bd57718}{clarkestranform}} (t, va, vb, vc)
+\begin{DoxyCompactList}\small\item\em Transforms 3 phase to alpha, beta, zero components. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a12d50d7dd898dabb70a7154bd29e7881}{inv\+\_\+clarkestransform}} (t, va, vb, vc)
+\begin{DoxyCompactList}\small\item\em Inverse of Clarke\textquotesingle{}s transform, converts alpha, beta, zero component to a,b,c component. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_aa0badc41419d530b1136f6960e496ffb}{parkstransform}} (t, va, vb, vc, w, gamma)
+\begin{DoxyCompactList}\small\item\em Transforms 3 phase to D,Q,0 components. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a3339ab3f6ec606f83f74cf0ea54bdb14}{inv\+\_\+parkstransform}} (t, va, vb, vc, w, gamma)
+\begin{DoxyCompactList}\small\item\em Inverse of Park\textquotesingle{}s transform, transforms D,Q,0 phase to a,b,c components. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_a5704f16975b5f437ba83daead4ffbb34}{sequencetransform}} (t, va, vb, vc)
+\item 
+def \mbox{\hyperlink{namespacefunctions_ad413c09d2480f591088bec48b79139ae}{insta\+LL\+\_\+\+RMSVoltage}} (t, va, vb, vc)
+\begin{DoxyCompactList}\small\item\em Instantaneous line to line RMS voltage. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefunctions_acf3495df5ac9219ad70137754f117287}{insta\+\_\+\+RMSCurrent}} (t, ia, ib, ic)
+\begin{DoxyCompactList}\small\item\em Instantaneous line current. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefunctions_ac3bd66a8335fb030fe08eb8e58a10f35}\label{namespacefunctions_ac3bd66a8335fb030fe08eb8e58a10f35}} 
+\index{functions@{functions}!avgMovWin@{avgMovWin}}
+\index{avgMovWin@{avgMovWin}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{avgMovWin()}{avgMovWin()}}
+{\footnotesize\ttfamily def functions.\+avg\+Mov\+Win (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{v,  }\item[{}]{t\+\_\+win }\end{DoxyParamCaption})}
+
+
+
+Moving window average of the signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em v} & Signal array \\
+\hline
+{\em t\+\_\+win} & Window length in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array representing the average of signal using a moving window. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_afd79838b9597931d2e90555a4bd57718}\label{namespacefunctions_afd79838b9597931d2e90555a4bd57718}} 
+\index{functions@{functions}!clarkestranform@{clarkestranform}}
+\index{clarkestranform@{clarkestranform}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{clarkestranform()}{clarkestranform()}}
+{\footnotesize\ttfamily def functions.\+clarkestranform (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc }\end{DoxyParamCaption})}
+
+
+
+Transforms 3 phase to alpha, beta, zero components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & a phase voltage array \\
+\hline
+{\em vb} & b phase voltage array \\
+\hline
+{\em vc} & c phase voltage array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3 arrays corresponding to alpha, beta, zero component. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_ae6a322a9a46a188d3b8a216e07d6eb84}\label{namespacefunctions_ae6a322a9a46a188d3b8a216e07d6eb84}} 
+\index{functions@{functions}!derivative@{derivative}}
+\index{derivative@{derivative}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{derivative()}{derivative()}}
+{\footnotesize\ttfamily def functions.\+derivative (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Derivation of a signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em x} & Signal array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array containing the derivative of the signal \textquotesingle{}x\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_acf3495df5ac9219ad70137754f117287}\label{namespacefunctions_acf3495df5ac9219ad70137754f117287}} 
+\index{functions@{functions}!insta\_RMSCurrent@{insta\_RMSCurrent}}
+\index{insta\_RMSCurrent@{insta\_RMSCurrent}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{insta\_RMSCurrent()}{insta\_RMSCurrent()}}
+{\footnotesize\ttfamily def functions.\+insta\+\_\+\+RMSCurrent (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{ia,  }\item[{}]{ib,  }\item[{}]{ic }\end{DoxyParamCaption})}
+
+
+
+Instantaneous line current. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em ia} & a phase current \\
+\hline
+{\em ib} & b phase current \\
+\hline
+{\em ic} & c phase current \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array corresponding to the instantaneous line current. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_ad413c09d2480f591088bec48b79139ae}\label{namespacefunctions_ad413c09d2480f591088bec48b79139ae}} 
+\index{functions@{functions}!instaLL\_RMSVoltage@{instaLL\_RMSVoltage}}
+\index{instaLL\_RMSVoltage@{instaLL\_RMSVoltage}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{instaLL\_RMSVoltage()}{instaLL\_RMSVoltage()}}
+{\footnotesize\ttfamily def functions.\+insta\+LL\+\_\+\+RMSVoltage (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc }\end{DoxyParamCaption})}
+
+
+
+Instantaneous line to line RMS voltage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & a phase voltage \\
+\hline
+{\em vb} & b phase voltage \\
+\hline
+{\em vc} & c phase voltage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array corresponding to the instantaneous RMS voltage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a84a36de26c106feac2e195a94119ccca}\label{namespacefunctions_a84a36de26c106feac2e195a94119ccca}} 
+\index{functions@{functions}!integration@{integration}}
+\index{integration@{integration}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{integration()}{integration()}}
+{\footnotesize\ttfamily def functions.\+integration (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+Integration of a signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em x} & Signal array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array containing the integration of the signal \textquotesingle{}x\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a12d50d7dd898dabb70a7154bd29e7881}\label{namespacefunctions_a12d50d7dd898dabb70a7154bd29e7881}} 
+\index{functions@{functions}!inv\_clarkestransform@{inv\_clarkestransform}}
+\index{inv\_clarkestransform@{inv\_clarkestransform}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{inv\_clarkestransform()}{inv\_clarkestransform()}}
+{\footnotesize\ttfamily def functions.\+inv\+\_\+clarkestransform (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc }\end{DoxyParamCaption})}
+
+
+
+Inverse of Clarke\textquotesingle{}s transform, converts alpha, beta, zero component to a,b,c component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & alpha component array \\
+\hline
+{\em vb} & beta component array \\
+\hline
+{\em vc} & zero component array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3 arrays corresponding to a,b,c component. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a3339ab3f6ec606f83f74cf0ea54bdb14}\label{namespacefunctions_a3339ab3f6ec606f83f74cf0ea54bdb14}} 
+\index{functions@{functions}!inv\_parkstransform@{inv\_parkstransform}}
+\index{inv\_parkstransform@{inv\_parkstransform}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{inv\_parkstransform()}{inv\_parkstransform()}}
+{\footnotesize\ttfamily def functions.\+inv\+\_\+parkstransform (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc,  }\item[{}]{w,  }\item[{}]{gamma }\end{DoxyParamCaption})}
+
+
+
+Inverse of Park\textquotesingle{}s transform, transforms D,Q,0 phase to a,b,c components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & D component array \\
+\hline
+{\em vb} & Q component array \\
+\hline
+{\em vc} & 0 component array \\
+\hline
+{\em w} & Frequency (in Hertz) \\
+\hline
+{\em gamma} & Phase angle (in Radian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3 arrays corresponding to a,b,c component respectively. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a3c2af030672bbdf0ea7c95d0e3e84995}\label{namespacefunctions_a3c2af030672bbdf0ea7c95d0e3e84995}} 
+\index{functions@{functions}!mw\_dft@{mw\_dft}}
+\index{mw\_dft@{mw\_dft}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{mw\_dft()}{mw\_dft()}}
+{\footnotesize\ttfamily def functions.\+mw\+\_\+dft (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{t,  }\item[{}]{omega }\end{DoxyParamCaption})}
+
+
+
+Function required for calculating windowed phasor of a signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Signal array \\
+\hline
+{\em t} & Time array \\
+\hline
+{\em omega} & Frequency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A complex number representing phasor quantity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_af72d9f915fa7042348a896f8b073336b}\label{namespacefunctions_af72d9f915fa7042348a896f8b073336b}} 
+\index{functions@{functions}!myhighpass@{myhighpass}}
+\index{myhighpass@{myhighpass}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{myhighpass()}{myhighpass()}}
+{\footnotesize\ttfamily def functions.\+myhighpass (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{u,  }\item[{}]{tc }\end{DoxyParamCaption})}
+
+
+
+First order high pass filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em u} & Signal array \\
+\hline
+{\em tc} & Cut-\/off frequency for the filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array showing the high-\/pass output of signal \textquotesingle{}x\textquotesingle{} based on cutoff frequency \textquotesingle{}tc\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_abd6d4e7692ea6198bbe15442cb086af9}\label{namespacefunctions_abd6d4e7692ea6198bbe15442cb086af9}} 
+\index{functions@{functions}!mylowpass@{mylowpass}}
+\index{mylowpass@{mylowpass}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{mylowpass()}{mylowpass()}}
+{\footnotesize\ttfamily def functions.\+mylowpass (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{u,  }\item[{}]{tc }\end{DoxyParamCaption})}
+
+
+
+First order low pass filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em u} & Signal array \\
+\hline
+{\em tc} & Cut-\/off frequency for the filter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array showing the low-\/pass output of signal \textquotesingle{}x\textquotesingle{} based on cutoff frequency \textquotesingle{}tc\textquotesingle{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_aa0badc41419d530b1136f6960e496ffb}\label{namespacefunctions_aa0badc41419d530b1136f6960e496ffb}} 
+\index{functions@{functions}!parkstransform@{parkstransform}}
+\index{parkstransform@{parkstransform}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{parkstransform()}{parkstransform()}}
+{\footnotesize\ttfamily def functions.\+parkstransform (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc,  }\item[{}]{w,  }\item[{}]{gamma }\end{DoxyParamCaption})}
+
+
+
+Transforms 3 phase to D,Q,0 components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & a component array \\
+\hline
+{\em vb} & b component array \\
+\hline
+{\em vc} & c component array \\
+\hline
+{\em w} & Frequency (in Hertz) \\
+\hline
+{\em gamma} & Phase angle (in Radian) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3 arrays corresponding to D,Q,0 component respectively. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a44e6c742613f3cff6f2f4777f2330093}\label{namespacefunctions_a44e6c742613f3cff6f2f4777f2330093}} 
+\index{functions@{functions}!rmsMovWin@{rmsMovWin}}
+\index{rmsMovWin@{rmsMovWin}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{rmsMovWin()}{rmsMovWin()}}
+{\footnotesize\ttfamily def functions.\+rms\+Mov\+Win (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{v,  }\item[{}]{t\+\_\+win }\end{DoxyParamCaption})}
+
+
+
+Moving window RMS of the signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em v} & Signal array \\
+\hline
+{\em t\+\_\+win} & Window length in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array representing the RMS of signal using a moving window. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a5704f16975b5f437ba83daead4ffbb34}\label{namespacefunctions_a5704f16975b5f437ba83daead4ffbb34}} 
+\index{functions@{functions}!sequencetransform@{sequencetransform}}
+\index{sequencetransform@{sequencetransform}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{sequencetransform()}{sequencetransform()}}
+{\footnotesize\ttfamily def functions.\+sequencetransform (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{va,  }\item[{}]{vb,  }\item[{}]{vc }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em va} & a component array \\
+\hline
+{\em vb} & b component array \\
+\hline
+{\em vc} & c component array \+:return\+: \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefunctions_a5d2290b3bfbd14e3cbfe8714994cb2ff}\label{namespacefunctions_a5d2290b3bfbd14e3cbfe8714994cb2ff}} 
+\index{functions@{functions}!trendfilter@{trendfilter}}
+\index{trendfilter@{trendfilter}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{trendfilter()}{trendfilter()}}
+{\footnotesize\ttfamily def functions.\+trendfilter (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{lamda1 }\end{DoxyParamCaption})}
+
+
+
+Returns a smoothened version of the input signal, depending on parameter \textquotesingle{}lambda\textquotesingle{}, considered as a median filter, also known as \textquotesingle{}Hodrick Prescott\textquotesingle{} filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em x} & Signal array \\
+\hline
+{\em lamda1} & Hyperparameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An array of smooth version of signal \textquotesingle{}x\textquotesingle{}, depending on parameter \textquotesingle{}lambda\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a0c7835ccaa18139640679ccffbbf89b8}\label{namespacefunctions_a0c7835ccaa18139640679ccffbbf89b8}} 
+\index{functions@{functions}!window\_phasor\_angle@{window\_phasor\_angle}}
+\index{window\_phasor\_angle@{window\_phasor\_angle}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{window\_phasor\_angle()}{window\_phasor\_angle()}}
+{\footnotesize\ttfamily def functions.\+window\+\_\+phasor\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{sr,  }\item[{}]{cycles,  }\item[{}]{dom\+\_\+freq = {\ttfamily 50} }\end{DoxyParamCaption})}
+
+
+
+Angle of moving discrete fourier transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em x} & Signal array \\
+\hline
+{\em sr} & Down-\/sampling factor \\
+\hline
+{\em cycles} & Window size as per number of cycles \\
+\hline
+{\em dom\+\_\+freq} & Fundamental frequency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A complex number array of calculated fundamental phasor. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacefunctions_a36d3531cead8d64150a156c73085d2ae}\label{namespacefunctions_a36d3531cead8d64150a156c73085d2ae}} 
+\index{functions@{functions}!window\_phasor\_mag@{window\_phasor\_mag}}
+\index{window\_phasor\_mag@{window\_phasor\_mag}!functions@{functions}}
+\doxysubsubsection{\texorpdfstring{window\_phasor\_mag()}{window\_phasor\_mag()}}
+{\footnotesize\ttfamily def functions.\+window\+\_\+phasor\+\_\+mag (\begin{DoxyParamCaption}\item[{}]{t,  }\item[{}]{x,  }\item[{}]{sr,  }\item[{}]{cycles,  }\item[{}]{dom\+\_\+freq = {\ttfamily 50} }\end{DoxyParamCaption})}
+
+
+
+Magnitude of moving discrete fourier transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Time array \\
+\hline
+{\em x} & Signal array \\
+\hline
+{\em sr} & Down-\/sampling factor \\
+\hline
+{\em cycles} & Window size as per number of cycles \\
+\hline
+{\em dom\+\_\+freq} & Fundamental frequency \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A complex number array of calculated fundamental phasor. 
+\end{DoxyReturn}
