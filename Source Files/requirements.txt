@@ -1,7 +1,0 @@
-numpy
-pyqt5==5.14.0
-pyqtgraph
-pandas
-comtrade
-scipy
-statsmodels
