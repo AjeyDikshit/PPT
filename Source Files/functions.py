@@ -40,15 +40,16 @@ def integration(t, x):
     return y
 
 
-def myhighpass(t, u, tc):
+def myhighpass(t, u, fc):
     """
     First order high pass filter.
 
     :param t: Time array
     :param u: Signal array
-    :param tc: Cut-off frequency for the filter
+    :param fc: Cut-off frequency for the filter
     :return: Array showing the high-pass output of signal 'x' based on cutoff frequency 'tc'.
     """
+    tc = 1/(2 * np.pi * fc)
     x = [u[0]]
     y = np.zeros(len(t))
     h = t[1] - t[0]
@@ -60,15 +61,17 @@ def myhighpass(t, u, tc):
     return y
 
 
-def mylowpass(t, u, tc):
+def mylowpass(t, u, fc):
     """
     First order low pass filter.
 
     :param t: Time array
     :param u: Signal array
-    :param tc: Cut-off frequency for the filter
+    :param fc: Cut-off frequency for the filter
     :return: Array showing the low-pass output of signal 'x' based on cutoff frequency 'tc'.
     """
+
+    tc = 1 / (2 * np.pi * fc)
     x = [u[0]]
     y = np.zeros(len(t))
     h = t[1] - t[0]
@@ -89,6 +92,7 @@ def mw_dft(data, t, omega):
     :param omega: Frequency
     :return: A complex number representing phasor quantity.
     """
+
     X_data = 0
     win_len = len(t)
     for k in range(len(t)):
@@ -150,7 +154,7 @@ def window_phasor_angle(t, x, sr, cycles, dom_freq=50):
     return [np.angle(va_mw, deg=True), tnew]
 
 
-def trendfilter(t, x, lamda1):
+def trendfilter(t, x, lambda1):
     """
     Returns a smoothened version of the input signal, depending on parameter 'lambda',
     considered as a median filter, also known as 'Hodrick Prescott' filter.
@@ -158,24 +162,25 @@ def trendfilter(t, x, lamda1):
     :param t: Time array
     :param x: Signal array
     :param lamda1: Hyperparameter
-    :return: An array of smooth version of signal 'x', depending on parameter 'lambda'
+    :return: An array of smooth version of signal 'x', depending on parameter 'lambda', and a new down-sampled time array.
+
     """
-    if len(t) > 10000:
-        sr = int(np.ceil(len(t) / 10000))
-        t = t[::sr]
-        x = x[::sr]
+    from scipy import sparse
+    from statsmodels.tools.validation import array_like, PandasWrapper
+    from scipy.sparse.linalg import spsolve
 
-    n = len(t)
-    I = np.eye(n)
-    D = np.zeros((n - 1, n))
+    time = t
+    pw = PandasWrapper(x)
+    nobs = len(t)
+    I = sparse.eye(nobs, nobs)
+    offsets = np.array([0, 1, 2])
+    data = np.repeat([[1.], [-2.], [1.]], nobs, axis=1)
+    K = sparse.dia_matrix((data, offsets), shape=(nobs - 2, nobs))
 
-    pp = 0
-    for kk in range(n - 2):
-        D[kk, 0 + pp:3 + pp] = [1, -2, 1]
-        pp += 1
-    y = np.linalg.inv(I + 2 * lamda1 * np.transpose(D) @ D) @ x[0:n]
+    use_umfpack = True
+    trend = spsolve(I + lambda1 * K.T.dot(K), x, use_umfpack=use_umfpack)
 
-    return y
+    return pw.wrap(trend, append='trend'), time
 
 
 def avgMovWin(t, v, t_win):
